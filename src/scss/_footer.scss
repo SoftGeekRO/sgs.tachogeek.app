@@ -1,0 +1,58 @@
+@use "variables";
+
+.-g-footer-affiliate-block {
+  padding-bottom: 0;
+}
+
+.main-footer {
+  // Copyright footer section hide Gomag span
+  p.copyright {
+    font-size: 1.3rem;
+    > span {
+      display: none;
+    }
+  }
+}
+
+
+// Footer payment logos
+.footer-holder {
+  .col {
+    ul {
+      &.footer-submenu {
+        a {
+          padding-left: 5px;
+        }
+        a:hover {
+          background: var(--#{variables.$prefix}main-blue-50) !important;
+          border-radius: 5px;
+        }
+      }
+      li {
+        a {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+    .title {
+      margin-bottom: 5px;
+    }
+    &.-g-footer-company-data {
+      font-size: 1.3rem;
+    }
+
+  }
+
+  .payment-accepted {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 3vw);
+    grid-gap: 0 10px;
+  }
+}
+
+/* Footer affiliate block */
+.-g-footer-affiliate-block {
+  padding-top: 0;
+}

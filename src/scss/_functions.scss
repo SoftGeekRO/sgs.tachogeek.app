@@ -1,0 +1,108 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:math';
+
+// SGS Functions
+//
+// Utility mixins and functions for evaluating source code across our variables, maps, and mixins.
+
+// Ascending
+// Used to evaluate Sass maps like our grid breakpoints.
+@mixin assert-ascending($map, $map-name) {
+  $prev-key: null;
+  $prev-num: null;
+  @each $key, $num in $map {
+    @if $prev-num == null or math.unit($num) == "%" or math.unit($prev-num) == "%" {
+      // Do nothing
+    } @else if not math.compatible($prev-num, $num) {
+      @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    } @else if $prev-num >= $num {
+      @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    }
+    $prev-key: $key;
+    $prev-num: $num;
+  }
+}
+
+// Starts at zero
+// Used to ensure the min-width of the lowest breakpoint starts at 0.
+@mixin assert-starts-at-zero($map, $map-name: "$grid-breakpoints") {
+  @if list.length($map) > 0 {
+    $values: map.values($map);
+    $first-value: list.nth($values, 1);
+    @if $first-value != 0 {
+      @warn "First breakpoint in #{$map-name} must start at 0, but starts at #{$first-value}.";
+    }
+  }
+}
+
+///
+/// Calculates the color of a linear gradient at a specific point.
+///
+/// @param {Color}  $start  - gradient’s start color
+/// @param {Color}  $end    - gradient’s end color
+/// @param {Number} $point  - point of the gradient (between 0 and 1, or 0% and 100%) at which we want the color
+/// @return {Color}
+///
+/// @example scss
+///   background-color: gradient-color-at(#BBE087, #DCDE85, 0.4);
+///
+@function gradient-color-at($start, $end, $point) {
+  $error-message: "$point needs to be a percentage (0% to 100%) or a unitless number (0 to 1)";
+  $unit: unit($point);
+  // $point needs to be unitless or percentage
+  @if $unit != "" and $unit != "%" {
+    @error $error-message;
+  }
+  @else {
+    // convert $point to fraction
+    @if $unit == "%" { $point: $point / 100%; }
+    // check if within bounds
+    @if $point < 0 or $point > 1 { @error $error-message; }
+  }
+
+  $delta_h:         hue($end) - hue($start);
+  $delta_s:  saturation($end) - saturation($start);
+  $delta_l:   lightness($end) - lightness($start);
+  $delta_a:       alpha($end) - alpha($start);
+
+  @return adjust-color(
+    $color:       $start,
+    $hue:         $point * $delta_h,
+    $saturation:  $point * $delta_s,
+    $lightness:   $point * $delta_l,
+    $alpha:       $point * $delta_a
+  );
+}
+
+
+@function _linear-gradient($direction, $colors...) {
+  $list: ();
+  @for $i from 1 through length($colors) {
+    $list: append($list, nth($colors, $i), comma);
+  }
+
+  @if map-has-key($map-for-directions, $direction) {
+    @return linear-gradient(
+        map-get($map-for-directions, $direction), $list
+    )
+  } @else if not map-has-key($map-for-directions, $direction) {
+    @if not index("deg", unit($direction)) {
+      @error "#{$direction} is a wrong value for the $direction parameter. The value must be eighter a number followed by the 'deg' unit or one of the followings: #{map-keys($map-for-directions)}.";
+    } @else {
+      @return linear-gradient($direction, $list);
+    }
+  }
+}
+
+// Colors
+@function to-rgb($value) {
+  @return rgb(color.channel($value, "red"), color.channel($value, "green"), color.channel($value, "blue"));
+}
+
+// Return opaque color
+// opaque(#fff, rgba(0, 0, 0, .5)) => #808080
+@function opaque($background, $foreground) {
+  @return mix(rgba($foreground, 1), $background, opacity($foreground) * 100%);
+}

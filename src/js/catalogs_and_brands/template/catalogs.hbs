@@ -1,0 +1,29 @@
+<div id="sgs-brands-hub">
+    <div class="sgs-brands-section">
+    {{#each brand_logos as |brands|}}
+    <a href="#{{this.anchor}}"><img src="{{this.logo}}" class="sgs-brand-logo" alt="{{this.anchor}}" target="sgs-frame"></a>
+    {{/each}}
+    </div>
+</div>
+<div id="sgs-catalogs-hub">
+    <header>
+        <h1>Supplier Catalogs</h1>
+    </header>
+    {{#each catalogs as |catalog|}}
+        <section class="sgs-catalog-section" id="{{catalog.anchor}}">
+            <h2>{{@key}}</h2>
+            <div class="sgs-year-section">
+                {{#each catalog.list as |year|}}
+                <h3>{{@key}}</h3>
+                <div class="sgs-catalog-container">
+                    <div class="sgs-catalog-item">
+                        {{#each year as |cat|}}
+                            <a href="{{cat.catalog}}" target="_blank"><img src="{{cat.cover}}" class="sgs-catalog-cover" alt="{{cat.anchor}}"></a>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+    {{/each}}
+</div>

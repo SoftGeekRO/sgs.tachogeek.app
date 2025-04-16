@@ -1,0 +1,25 @@
+@use "variables";
+
+.breadcrumb {
+  font-size: 1.3rem;
+}
+
+.breadcrumbs-box ol li {
+  a {
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
+  &.active {
+    font-size: 1.4rem;
+    color: var(--#{variables.$prefix}main-blue-500) !important;
+    font-weight: 600;
+  }
+}
+
+.breadcrumbs-default ol li {
+  &.active {
+    font-size: 1.4rem;
+    color: var(--#{variables.$prefix}main-blue-500) !important;
+    font-weight: 600;
+  }
+}

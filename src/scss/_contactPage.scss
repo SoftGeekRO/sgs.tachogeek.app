@@ -1,0 +1,18 @@
+
+#contact-page {
+  .title-box {
+    margin-bottom: 10px;
+  }
+  .register-terms {
+    font-size: 1.1rem;
+  }
+  .contact-information {
+    h3.title {
+      color: var(--sgs-main-blue-500);
+    }
+
+    .info-list > li > strong {
+      color: var(--sgs-main-blue-500);
+    }
+  }
+}

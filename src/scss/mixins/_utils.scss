@@ -1,0 +1,8 @@
+
+@mixin has-greyscale($greyscale: false) {
+  @if $greyscale {
+    filter: grayscale(1);
+  } @else {
+    filter: grayscale(0);
+  }
+}

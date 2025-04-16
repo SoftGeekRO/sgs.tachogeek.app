@@ -1,0 +1,108 @@
+@use 'vendor/rfs' as rfs;
+@use 'variables' as *;
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+// remove default spacing
+// force styling of type through styling, rather than elements
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+// Root
+//
+// Ability to the value of the root font sizes, affecting the value of `rem`.
+// null by default, thus nothing is generated.
+
+:root {
+  @if $enable-smooth-scroll {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+// improves punctuation in supported browsers
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-attachment: fixed;
+  -webkit-tap-highlight-color: transparent;
+  hanging-punctuation: first last;
+}
+
+// Body
+//
+// 1. Remove the margin in all browsers.
+// 2. As a best practice, apply a default `background-color`.
+// 3. Prevent adjustments of font size after orientation changes in iOS.
+// 4. Change the default tap highlight to be completely transparent in iOS.
+
+// scss-docs-start reboot-body-rules
+body {
+  min-height: 100svh;
+  scrollbar-face-color:#90c3ef;
+  scrollbar-track-color:#4790d0;
+  text-rendering: optimizeLegibility;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.004) !important;
+  font-family: var(--#{$prefix}body-font-family);
+  @include rfs.font-size(var(--#{$prefix}body-font-size));
+  font-weight: var(--#{$prefix}body-font-weight);
+  line-height: var(--#{$prefix}body-line-height);
+  color: var(--#{$prefix}body-color);
+  text-align: var(--#{$prefix}body-text-align);
+  background-color: var(--#{$prefix}body-bg); // 2
+  scroll-behavior: smooth;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%; // 3
+  -webkit-tap-highlight-color: rgba($black, 0); // 4
+}
+// scss-docs-end reboot-body-rules
+
+*::placeholder {
+   color: var(--sgs-main-blue-500);
+}
+
+/* responsive images/videos */
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  font-style: italic;
+  display: block !important;
+  max-width: 100% !important;
+  vertical-align: middle;
+  height: auto !important;
+  shape-margin: 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Improved heading in supported browsers */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+// improve readability with max-width on paragraphs and lists
+// prevent orphans in supported browsers
+p {
+  max-width: var(--p-max-width, 72ch);
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--sgs-main-blue-500);
+}
+
+/* form checkbox */
+input[type=checkbox], input[type=radio] {
+    margin: 1px 5px 0;
+}

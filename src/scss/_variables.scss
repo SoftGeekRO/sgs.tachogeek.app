@@ -1,0 +1,300 @@
+@use '_functions.scss';
+
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+
+// scss-docs-start gray-color-variables
+$white:    #fff    !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000    !default;
+// scss-docs-end gray-color-variables
+
+// fusv-disable
+// scss-docs-start gray-colors-map
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+) !default;
+// scss-docs-end gray-colors-map
+// fusv-enable
+
+$white:                       #fff    !default;
+
+$logo-orange:                 #E58600 !default;
+$logo-blue:                   #075194 !default;
+$base-color:                  #4790d0 !default;
+
+$blue-50:                     #f0f7ff !default;
+$blue-100:                    #e1effd !default;
+$blue-200:                    #bcddfb !default;
+$blue-300:                    #81c4f8 !default;
+$blue-400:                    #3da5f3 !default;
+$blue-500:                    #148ae3 !default;
+$blue-600:                    #076bc2 !default;
+$blue-700:                    #075194 !default;
+$blue-800:                    #0b4a81 !default;
+$blue-900:                    #0f3e6b !default;
+$blue-950:                    #0a2847 !default;
+
+$orange-50:                   #fffcea !default;
+$orange-100:                  #fff7c5 !default;
+$orange-200:                  #ffee87 !default;
+$orange-300:                  #ffdf48 !default;
+$orange-400:                  #ffcd1e !default;
+$orange-500:                  #fcac04 !default;
+$orange-600:                  #e58600 !default;
+$orange-700:                  #b95b04 !default;
+$orange-800:                  #96460a !default;
+$orange-900:                  #7b3a0c !default;
+$orange-950:                  #471c01 !default;
+
+$black:                       #000    !default;
+
+// fusv-disable
+$blues: (
+  "50":                     $blue-50,
+  "100":                    $blue-100,
+  "200":                    $blue-200,
+  "300":                    $blue-300,
+  "400":                    $blue-400,
+  "500":                    $blue-500,
+  "600":                    $blue-600,
+  "700":                    $blue-700,
+  "800":                    $blue-800,
+  "900":                    $blue-900,
+  "950":                    $blue-950
+) !default;
+// fusv-enable
+
+// fusv-disable
+$oranges: (
+  "50":                   $orange-50,
+  "100":                  $orange-100,
+  "200":                  $orange-200,
+  "300":                  $orange-300,
+  "400":                  $orange-400,
+  "500":                  $orange-500,
+  "600":                  $orange-600,
+  "700":                  $orange-700,
+  "800":                  $orange-800,
+  "900":                  $orange-900,
+  "950":                  $orange-950
+) !default;
+// fusv-enable
+
+// scss-docs-start border-radius-variables
+$border-radius:               .375rem !default;
+
+$glow-border-radius:          10px  !default;
+$glow-border-width:           0px   !default;
+$glow-border-width:           1px !default;
+$glow-border:                 #{'hsl(280 10% 50% / 1)'} !default;
+
+$container-background:        #{'hsl(0, 0%, 100%)'} !default;
+$container-color:             #{'hsl(209, 91%, 30%)'} !default;
+
+$card-gradient-start-before:  #99ff00;
+$card-gradient-stop-before:   #0000ff;
+$card-has-greyscale:          false !default;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+// scss-docs-start border-variables
+$border-width:                1px !default;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+) !default;
+$border-style:                solid !default;
+$border-color:                $orange-300 !default;
+$border-color-translucent:    rgba($black, .175) !default;
+// scss-docs-end border-variables
+
+// scss-docs-start border-radius-variables
+$border-radius:               .375rem !default;
+$border-radius-sm:            .25rem !default;
+$border-radius-lg:            .5rem !default;
+$border-radius-xl:            1rem !default;
+$border-radius-xxl:           2rem !default;
+$border-radius-pill:          50rem !default;
+// scss-docs-end border-radius-variables
+// fusv-disable
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-rounded:              true !default;
+$enable-smooth-scroll:        true !default;
+$enable-gradient-before:      false !default;
+$enable-gradient-after:       true !default;
+
+// Prefix for :root CSS variables
+$prefix:                      sgs- !default;
+
+// Gradient
+//
+// The gradient which is added to components if `$enable-gradients` is `true`
+// This gradient is also added to elements with `.bg-gradient`
+// scss-docs-start variable-gradient
+$gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
+// scss-docs-end variable-gradient
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
+// scss-docs-end spacer-variables-maps
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-text-align:           null !default;
+$body-color:                $gray-900 !default;
+$body-bg:                   $white !default;
+
+$body-secondary-color:      rgba($body-color, .75) !default;
+$body-secondary-bg:         $gray-200 !default;
+
+$body-tertiary-color:       rgba($body-color, .5) !default;
+$body-tertiary-bg:          $gray-100 !default;
+
+$body-emphasis-color:       $black !default;
+
+// Hover Animation for catalogs
+$column-grid-gap-catalogs: 10px;
+$row-grid-gap-catalogs: 10px;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+// scss-docs-end grid-breakpoints
+
+@include functions.assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include functions.assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// stylelint-enable value-keyword-case
+$font-family-base:            var(--#{$prefix}font-sans-serif) !default;
+$font-family-code:            var(--#{$prefix}font-monospace) !default;
+
+// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+// $font-size-base affects the font size of the body text
+$font-size-root:              null !default;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875 !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
+$font-weight-semibold:        600 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$font-weight-base:            $font-weight-normal !default;
+
+$line-height-base:            1.5 !default;
+$line-height-sm:              1.25 !default;
+$line-height-lg:              2 !default;
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+// scss-docs-end font-variables
+
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+) !default;
+// scss-docs-end font-sizes
+
+// scss-docs-start headings-variables
+$headings-margin-bottom:      $spacer * .5 !default;
+$headings-font-family:        null !default;
+$headings-font-style:         null !default;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              inherit !default;
+// scss-docs-end headings-variables
+
+// scss-docs-start display-headings
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem
+) !default;
+
+$display-font-family: null !default;
+$display-font-style:  null !default;
+$display-font-weight: 300 !default;
+$display-line-height: $headings-line-height !default;
+// scss-docs-end display-headings
+
+$maximum-paragraph-width: 180ch;

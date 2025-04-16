@@ -1,0 +1,35 @@
+/* Title on category image tweak */
+.category-image-header img {
+    display: none;
+}
+
+.catTitle.catTitle-image-header.catTitle-high-contrast {
+    //color: ;
+}
+
+@media (min-width: 769px) {
+    #category-page .catTitle.catTitle-image-header {
+        position: absolute;
+        top: 60px;
+        left: 60px;
+        color: #fff;
+        font-size: 1.9em !important;
+        z-index: 100;
+    }
+
+    .category-image-header {
+        height: 149px;
+        width: 1096.5px;
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+
+    .category-image-header img {
+        height: 149px;
+        width: 1100px;
+        display: block;
+        object-fit: cover;
+        -webkit-mask-image: linear-gradient(to left, transparent, black 20%, black 80%, transparent 100%);
+    }
+}

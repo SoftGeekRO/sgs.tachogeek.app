@@ -1,0 +1,20 @@
+@use "variables";
+
+#wrapper .bnn-group-left {
+    //margin-top: 5px;
+
+  .owl-theme {
+    .owl-controls {
+      .owl-buttons {
+        div {
+          background: var(--#{variables.$prefix}main-blue-300) !important;
+
+          &:hover {
+            background: var(--#{variables.$prefix}main-blue-400) !important;
+          }
+        }
+      }
+    }
+  }
+
+}

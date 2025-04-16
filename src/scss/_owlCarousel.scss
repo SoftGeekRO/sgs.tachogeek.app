@@ -1,0 +1,35 @@
+@use "variables";
+
+.owl-carousel .owl-wrapper-outer {
+    border-radius: 10px;
+
+  // @todo: work in progress, remove the space between products scroll list
+  .owl-wrapper {
+    //width: 100% !important;
+    //margin: 0 auto !important;
+  }
+}
+
+.carousel-slide .owl-theme .owl-controls .owl-buttons div {
+  background: var(--#{variables.$prefix}main-blue-300) !important;
+
+  &:hover{
+    background: var(--#{variables.$prefix}main-blue-500) !important;
+  }
+}
+
+/* Spaces between carouse slide paddingg bottom and top */
+@media screen and (min-width: 768px) {
+  .carousel-slide .holder {
+      padding: 20px 60px 7px;
+  }
+}
+
+.product-box .box-holder {
+  padding: 20px 18px;
+  border-radius: 10px;
+}
+
+.title-carousel .title {
+  color: var(--#{variables.$prefix}main-blue-500);
+}

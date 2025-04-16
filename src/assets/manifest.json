@@ -1,0 +1,108 @@
+{
+  "name": "TachoGeek Romania",
+  "short_name": "TachoGeek Romania",
+  "description": "More easy to browse our store using a dedicated application, and receive news and information directly from us.",
+  "id": "sgs-tachogeek?version=1&mode=producation",
+  "start_url": "https://www.tachogeek.ro/",
+  "scope": "https://www.tachogeek.ro/",
+  "orientation": "portrait",
+  "background_color": "#fff",
+  "theme_color": "#80D0ff",
+  "display_override": [
+    "fullscreen",
+    "browser",
+    "window-controls-overlay"
+  ],
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./img/logo/main_logo_72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./img/logo/main_logo_96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./img/logo/main_logo_128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./img/logo/main_logo_144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./img/logo/main_logo_152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./img/logo/main_logo_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./img/logo/main_logo_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./img/pwa/screenshots/TachoGeek_desktop_wide_manifest.png",
+      "sizes": "1906x1031",
+      "type": "image/png",
+      "form_factor": "wide",
+      "platform": "windows",
+      "label": "Front page of TachoGeek website from a wide desktop browser"
+    },
+    {
+      "src": "./img/pwa/screenshots/TachoGeek_iOS_manifest.jpeg",
+      "sizes": "735x1600",
+      "type": "image/jpg",
+      "form_factor": "narrow",
+      "platform": "ios",
+      "label": "Front page of TachoGeek website from iOS phone"
+    }
+  ],
+  "lang": "ro",
+  "categories": [
+    "productivity",
+    "shopping"
+  ],
+  "shortcuts": [
+    {
+      "name": "Descarcare tacograph",
+      "url": "https://www.tachogeek.ro/tahografe-si-monitorizare",
+      "description": "Unelte pentru descarcarea de tachograph utilizand echipamente locale sau pentru descarcare la distanta",
+      "icons": [
+        {
+          "src": "./img/logo/main_logo_192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Accesorii Camioane si remorci",
+      "url": "https://www.tachogeek.ro/accesorii-camioane-si-remorci",
+      "description": "Accesorii pentru soferii si pentru cabina de condus.",
+      "icons": [
+        {
+          "src": "./img/logo/main_logo_192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

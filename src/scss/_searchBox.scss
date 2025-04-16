@@ -1,0 +1,33 @@
+.text-main {
+    color: var(--main-color-blue-500);
+}
+
+#result-page > .search-form {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.autocomplete-suggestion .ac-list .ac-price {
+
+  > s {
+    color: var(--sgs-main-blue-700) !important;
+  }
+
+  > span.text-main {
+    color: var(--sgs-main-blue-500) !important;
+  }
+}
+
+.ac-h .ac-list{
+  &::-webkit-scrollbar-thumb {
+    background: var(--sgs-main-blue-700) !important;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--sgs-main-blue-100) !important;
+  }
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(68, 68, 68, .8);
+  }
+}

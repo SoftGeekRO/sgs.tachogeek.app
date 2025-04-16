@@ -1,0 +1,9 @@
+@use "variables";
+
+#checkoutform #SubmitButtonMessageBlock {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--#{variables.$prefix}main-orange-500);
+}

@@ -1,0 +1,7 @@
+@mixin button_face {
+  background: var(--sgs-main-blue-600) !important;
+  border: 1px solid var(--sgs-main-blue-600) !important;
+  /*background: rgb(20,138,227) !important;*/
+  /*background: linear-gradient(0deg, rgba(20,138,227,1) 58%, rgba(20,138,227,1) 100%) !important;*/
+  opacity: unset;
+}

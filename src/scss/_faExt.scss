@@ -1,0 +1,11 @@
+@font-face {
+	font-family: "Font Awesome 6 Brands";
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url("../webfonts/v6.5.1/fa-brands-400.woff2?v4") format("woff2"),url("../webfonts/v6.5.1/fa-brands-400.ttf?v4") format("truetype")
+}
+
+.fa-github:before {
+	content: "\f09b"
+}

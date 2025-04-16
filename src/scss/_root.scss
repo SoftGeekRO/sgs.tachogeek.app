@@ -1,0 +1,75 @@
+@use 'sass:meta';
+
+@use "vendor/rfs" as rfs;
+@use "variables" as *;
+
+:root {
+  /* TachoGeek logo colors (BLUE) */
+  @each $color, $value in $blues {
+    --#{$prefix}main-blue-#{$color}: #{$value};
+  }
+  /* TachoGeek logo colors (ORANGE) */
+  @each $color, $value in $oranges {
+    --#{$prefix}main-orange-#{$color}: #{$value};
+  }
+  /* TachoGeek primary logo colors */
+  --#{$prefix}primary-orange: #{$logo-orange};
+  --#{$prefix}primary-blue: #{$logo-blue};
+
+  --#{$prefix}white: #{$white};
+  --#{$prefix}black: #{$black};
+
+  // Fonts
+
+  // Note: Use `inspect` for lists so that quoted items keep the quotes.
+  // See https://github.com/sass/sass/issues/2383#issuecomment-336349172
+  --#{$prefix}font-sans-serif: #{meta.inspect($font-family-sans-serif)};
+  --#{$prefix}font-monospace: #{meta.inspect($font-family-monospace)};
+  --#{$prefix}gradient: #{$gradient};
+
+  // Root and body
+  // scss-docs-start root-body-variables
+  @if $font-size-root != null {
+    --#{$prefix}root-font-size: #{$font-size-root};
+  }
+  --#{$prefix}body-font-family: #{meta.inspect($font-family-base)};
+  @include rfs.rfs($font-size-base, --#{$prefix}body-font-size);
+  --#{$prefix}body-font-weight: #{$font-weight-base};
+  --#{$prefix}body-line-height: #{$line-height-base};
+  @if $body-text-align != null {
+    --#{$prefix}body-text-align: #{$body-text-align};
+  }
+
+  --#{$prefix}body-color: #{$body-color};
+  --#{$prefix}body-color-rgb: #{to-rgb($body-color)};
+  --#{$prefix}body-bg: #{$body-bg};
+  --#{$prefix}body-bg-rgb: #{to-rgb($body-bg)};
+
+  --#{$prefix}container-background: #{$container-background};
+  --#{$prefix}container-color:  #{$container-color};
+
+  // Hover Animation
+  // Catalogs view
+  --#{$prefix}column-grid-gap-catalogs: #{$column-grid-gap-catalogs};
+  --#{$prefix}row-grid-gap-catalogs: #{$row-grid-gap-catalogs};
+
+  --p-max-width: #{$maximum-paragraph-width};
+
+  // special settings catalogs and logs pages
+  --#{$prefix}catalog-cover-height: 250px;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--sgs-main-blue-700);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--sgs-main-blue-100);
+}

@@ -1,0 +1,42 @@
+// Configuration
+
+@use "maps";
+@use "functions";
+@use "variables";
+@use "mixins";
+@use "utilities";
+
+// Layout & components
+@use "root";
+@use "reboot";
+@use "global";
+@use "faExt";
+
+@use "helloBar";
+@use "curentyToogle";
+@use "searchBox";
+@use "bannerGroup";
+@use "fancybox";
+@use "catalogs_brands";
+@use "buttons";
+@use "breadcrumbs";
+@use "contactPage";
+@use "owlCarousel";
+@use "categoryImage";
+@use "filterBox";
+@use "finishOrderPage";
+@use "addToCartSticky";
+@use "productPage";
+@use "productTableSpecification";
+@use "addToCartPage";
+@use "mainMenu";
+@use "trustIcons";
+@use "bottomSection";
+@use "footer";
+@use "pv_system_types";
+
+// jQuery UI
+@import "~jquery-ui/dist/themes/base/jquery-ui.min.css";
+@import "~jquery-ui/dist/themes/start/jquery-ui.min.css";
+// FancyBox
+@import "~@fancyapps/ui/dist/fancybox/fancybox.css";

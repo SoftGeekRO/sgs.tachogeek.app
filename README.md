@@ -1,2 +1,2 @@
-# sgs.tg.jsapp
-TachoGeek javascript application for tweaking the online store 
+# sgs.tachogeek.app
+TachoGeek javascript application for tweaking the online store

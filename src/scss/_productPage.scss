@@ -1,0 +1,194 @@
+.detail-title, .detail-prod-attr {
+  text-align: left;
+}
+
+.description-tab ._descriptionTab div > * {
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+}
+
+.specs-table > p {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid hsla(0,0%,63%,.25);
+  word-break: break-word;
+
+  b {
+    display: inline-block;
+    width: 300px;
+  }
+}
+
+.detail-product-atributes .short-description div > * {
+  font-size: 1.1rem !important;
+  font-weight: 500;
+}
+
+.icon {
+  &.new {
+    background: var(--sgs-main-blue-500) !important;
+  }
+  &.discount {
+    background: var(--sgs-main-orange-500) !important;
+  }
+}
+
+// Product listing SKU style
+.product-box .top-side-box {
+  a {
+    font-weight: 500 !important;
+    font-size: 1.4rem;
+  }
+
+  .top-side-box-sku {
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--sgs-main-blue-500);
+  }
+}
+
+.-g-product-details {
+  // Product attributes - Delivery period
+  .detail-product-atributes {
+    span {
+      // Product attributes border on first children
+      &.show-attributes:first-of-type {
+        display: block !important;
+        padding-top: 10px !important;
+        margin-top: 10px !important;
+        border-top: 1px solid #dbdbdb !important;
+      }
+      &.show-attributes > * {
+        padding-bottom: 5px;
+      }
+    }
+    // Product atrtributes - Delivery period
+    .show-attributes span.delivery_period {
+      color: var(--sgs-main-blue-500);
+      font-weight: 600;
+    }
+
+    .__shippingDeliveryTime b {
+      color: var(--sgs-main-blue-500);
+    }
+
+    // Product short-description top border
+    .short-description {
+      border-top: 1px solid #dbdbdb !important;
+      /*border-bottom: 1px solid #dbdbdb !important;*/
+      padding-top: 10px !important;
+      margin-top: 10px !important;
+      /*padding-bottom: 10px !important;*/
+    }
+  }
+  .__shippingPriceTemplate {
+    font-size: 1.3rem;
+  }
+}
+
+// Product full price
+.product-box .price s, .detail-price s, .cart-items .price s, .cart-dd .price s, .extra-offer .box-offer .price .price-full {
+  color: var(--sgs-main-blue-700) !important;
+}
+
+// Product final price
+.product-box .price, .product-box .price .text-main, .detail-price, .cart-items .price .text-main, .cart-dd .price .text-main, .extra-offer .box-offer .price .text-main {
+  color: var(--sgs-main-blue-500) !important;
+  font-weight: 500;
+}
+
+// Product price without VAT
+span[class*='-g-product-final-price-wihout-vat-'] {
+  display: block;
+  font-size: 15px;
+  color: var(--sgs-main-orange-500) !important;
+  padding-left: 7px;
+  padding-bottom: 5px;
+
+  .-g-product-vat-value {
+    font-size: 1rem;
+    vertical-align: text-bottom;
+  }
+}
+
+// Align qty form in  product page
+.add-section .qty-regulator {
+  margin: 1.5px 5px 0 0 !important;
+}
+
+// Align on left the product attribute in product page
+.prod-attr-h {
+  text-align:left;
+  .available-ms {
+    font-weight: 600 !important;
+  }
+}
+
+// Product wish section detail share
+.wish-section {
+
+  > a {
+    font-weight: 500 !important;
+  }
+
+  .detail-share {
+    display: inline;
+  }
+}
+
+// product stock status
+.stock-status.on-order, .stock-status.pre-order {
+  color: var(--sgs-main-blue-500) !important;
+}
+
+// product SKU code
+.product-code {
+
+  span {
+    font-weight: 500;
+    font-size: 1.2rem !important;
+  }
+  .code {
+
+    > strong {
+      color: var(--sgs-main-blue-500) !important;
+    }
+  }
+}
+
+// tabs with description, video, datasheet
+#product-page .detail-tabs .resp-tabs-list {
+  li {
+    color: #fff !important;
+
+    &:only-child {
+      border-radius: 5px 5px 5px 5px !important;
+    }
+
+    &:first-child {
+      /* top-left top-right bottom-right bottom-left */
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      /* top-left top-right bottom-right bottom-left */
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}
+
+.product-bottom .detail-tabs .resp-tabs-list .resp-tab-item {
+  background-color: var(--sgs-main-blue-300) !important;
+
+  &.resp-tab-active {
+    background-color: var(--sgs-main-blue-600) !important;
+  }
+}
+
+.__optionSelectorImage {
+  a {
+    img {
+      display: inline !important;
+    }
+  }
+}

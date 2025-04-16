@@ -1,0 +1,102 @@
+@use "variables";
+
+.main-menu ul > li > a {
+  //color: var(--#{$prefix}main-blue-500)  !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 13px !important;
+  text-transform: uppercase;
+}
+
+.main-menu .sg-menu-top-bold {
+  font-weight: 600 !important;
+}
+
+.main-menu ul > li:hover > a, .menu-dd a:hover {
+  color: var(--#{variables.$prefix}main-blue-700) !important;
+}
+
+.main-header .main-menu {
+  /* border-bottom: 2px solid #4790d0; */
+  border-bottom: none;
+
+  &>li {
+    & > a {
+      color: var(--#{variables.$prefix}main-blue-700) !important;
+    }
+    &:hover > a {
+      color: var(--#{variables.$prefix}main-blue-700) !important;
+    }
+  }
+
+}
+
+.mobile-icon li {
+  a {
+    color: var(--#{variables.$prefix}main-blue-500) !important;
+  }
+  &:hover a {
+    color: var(--#{variables.$prefix}main-blue-700) !important;
+  }
+}
+
+#mm-main-menu .mm-navbar {
+  color: var(--#{variables.$prefix}main-blue-500) !important;
+}
+
+#mm-nav-filter .mm-navbar {
+  color: var(--#{variables.$prefix}main-blue-500) !important;
+}
+
+.menu-dd {
+  border-radius: 10px;
+  &.open li a {
+    font-size: 1.2rem !important;
+    font-weight: 500;
+    padding-left: 5px;
+  }
+  li {
+    a:hover {
+      background: var(--#{variables.$prefix}main-blue-100) !important;
+      border-radius: 5px;
+    }
+
+    .title {
+      margin-bottom: 5px;
+      a {
+        color: var(--#{variables.$prefix}main-blue-500) !important;
+        font-weight: 400 !important;
+        font-size: 1.35rem !important;
+        text-transform: uppercase !important;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+.main-header.fix-nav #navigation {
+  transition: none !important;
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+
+.main-header.fix-nav {
+  .top-head {
+    transition: none !important
+  }
+
+  &.fade-menu {
+    transition: none !important;
+    -webkit-transition: none !important;
+    transform: none !important;
+
+    &.animate-menu {
+      transform: none;
+    }
+
+    #navigation {
+      -webkit-transform: none !important;
+      transform: none !important;
+    }
+  }
+}

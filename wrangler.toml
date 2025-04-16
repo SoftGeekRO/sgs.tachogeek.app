@@ -1,0 +1,18 @@
+name = "tachogeek-loader"
+type = "javascript"
+
+account_id = "d2ae84088886563abfa462135c521388"
+workers_dev = false
+compatibility_date = "2025-04-13"
+
+# Optional: Zone ID (recommended if deploying via API or CI)
+# zone_id = "your-zone-id"
+
+# Top-level routes section (this is correct)
+routes = [
+    { pattern = "tachogeek.ro/*", zone_name = "tachogeek.ro" },
+    { pattern = "*.tachogeek.ro/*", zone_name = "tachogeek.ro" },
+]
+
+# Optional: custom build directory
+#build = { upload = { dir = "./cf-dist" } }

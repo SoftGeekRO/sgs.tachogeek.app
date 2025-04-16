@@ -1,0 +1,223 @@
+@use "variables";
+
+@-webkit-keyframes stuckMoveUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%)
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+}
+
+@keyframes stuckMoveUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+}
+
+@-webkit-keyframes stuckMoveDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes stuckMoveDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 550px) {
+  .sticky-add-to-cart--active {
+    font-size:.8em;
+
+    .sticky-add-to-cart__product {
+      display: none !important;
+    }
+  }
+}
+
+.sticky-add-to-cart-wrapper {
+  height: auto;
+}
+
+.sticky-add-to-cart__product {
+  display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 3px;
+
+  img {
+    width: 45px;
+    height: 45px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 50% 50%;
+    object-position: 50% 50%;
+    margin-right: 1.4rem;
+    border-radius: 5px;
+  }
+
+  .product-title-small {
+    margin-right: 1em;
+    max-width: 180px;
+    line-height: 1;
+    color: #777;
+    font-size: 13px;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+.sticky-add-to-cart--hide {
+  -webkit-animation: stuckMoveDown .6s;
+  animation: stuckMoveDown .6s;
+}
+
+.sticky-add-to-cart--active {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: .9em;
+  background-color: rgba(255, 255, 255, .8);
+  border-top: 1px solid #ddd;
+  -webkit-animation: stuckMoveUp .6s;
+  animation: stuckMoveUp .6s;
+
+  .product-page-price {
+    margin-top: 0;
+    margin-right: 0.9em;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    padding: 0;
+    border: 0
+  }
+
+  .quantity, & form, & button {
+    margin-bottom: 0
+  }
+
+  .sticky-add-to-cart__product {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+  }
+
+  .quantity input[type=text] {
+    display: block;
+    float: left;
+    border: 1px solid #dbdbdb;
+    width: 36px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .minus {
+    border-radius: 32px 0 0 32px;
+  }
+
+  .plus {
+    border-radius: 0 32px 32px 0;
+  }
+
+  .minus, & .plus {
+    display: block;
+    float: left;
+    border: 1px solid #dbdbdb;
+    color: #333;
+    font-weight: 300;
+    height: 32px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+  }
+
+  .add2cart.sticky-add-2-cart {
+    vertical-align: top;
+    float: none;
+    display: inline-block;
+    line-height: 1.4 !important;
+    margin-left: 15px !important;
+    margin-bottom: 4px !important;
+    border-radius: 5px;
+  }
+}
+
+.sticky-add-to-cart .add2cart.-g-addtocart-button-disabled {
+  position: relative;
+  padding-right: 55px !important;
+
+  &:after {
+    content: "";
+    background: url("../../src/assets/stickyAddToCart/img/imgDots.svg") center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 55px;
+  }
+}
+
+.price-wrapper {
+  span.amount {
+    white-space: nowrap;
+    color: var(--sgs-main-blue-500) !important;
+    font-weight: 600;
+  }
+
+  span.price-currencySymbol {
+    font-size: .75em;
+    vertical-align: top;
+    margin-top: 0.05em;
+  }
+}

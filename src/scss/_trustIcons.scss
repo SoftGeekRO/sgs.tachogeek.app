@@ -1,0 +1,19 @@
+@use "variables";
+
+#wrapper .icon-group {
+    top: 10px;
+    box-shadow: 0px 0px 10px -1px #ccc;
+
+  .col {
+    .icon-label {
+      text-align: center !important;
+    }
+  }
+
+  &.detail {
+    margin-top: 0;
+  }
+  &.loaded {
+    background-color: var(--#{variables.$prefix}main-blue-100) !important;
+  }
+}

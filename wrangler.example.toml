@@ -1,0 +1,9 @@
+name = "tachogeek-injector"
+type = "javascript"
+
+account_id = "YOUR_ACCOUNT_ID"
+compatibility_date = "2024-04-01"
+
+# Apply to the full site
+[triggers]
+routes = ["domain.tld/*", "www.domain.tld/*"]

@@ -1,0 +1,107 @@
+@use "variables";
+
+/* currency drop toogle box */
+
+.acount-section {
+  li.international-header {
+    .flag-select {
+      ._currencyDisplay {
+        font-size: 1.3rem;
+      }
+    }
+    ul.flag-drop {
+      width: 150px !important;
+      li {
+        padding: 2px 2px 0 2px;
+      }
+      .currency-header {
+        .international-title {}
+        ul.international-holder {
+          li:hover {
+            background-color: var(--#{variables.$prefix}main-blue-300);
+            border-radius: 5px;
+          }
+          a.text-default {
+            font-size: 1.4rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+//
+//.currency {
+//  & ._currencyDisplay {
+//    color: #444 !important;
+//    font-size: 1.3rem;
+//  }
+//
+//  & ._currencyDisplay:after {
+//    content: '';
+//    border: solid black;
+//    border-width: 0 2px 2px 0;
+//    display: inline-block;
+//    padding: 3px;
+//    transform: rotate(45deg);
+//    -webkit-transform: rotate(45deg);
+//    margin: 4px;
+//  }
+//
+//  & .flag-drop {
+//    position: absolute;
+//    will-change: transform;
+//    top: 0;
+//    left: 0;
+//    transform: translate3d(0px, 18px, 0px);
+//    width: 76px !important;
+//    padding-left: 0;
+//    margin-bottom: 0;
+//  }
+//
+//  & ul.flag-drop {
+//    padding: 0;
+//    margin: 0;
+//    display: block;
+//    min-width: 100%;
+//    transform-origin: top;
+//    animation-fill-mode: forwards;
+//    transition: all .2s cubic-bezier(.7,0,.3,1);
+//    -webkit-transition: all .2s cubic-bezier(.7,0,.3,1);
+//    background: #fff;
+//    border: solid 1px rgba(0,0,0,.27);
+//    box-shadow: 3px 4px 8px 0 rgba(0,0,0,.1);
+//  }
+//
+//  & .flag-drop li {
+//    margin-bottom: 0 !important;
+//    text-align: left;
+//    line-height: inherit;
+//
+//    &:hover {
+//      background-color: var(--sgs-main-blue-200);
+//      color: #fff;
+//    }
+//  }
+//
+//  ul li a {
+//    transition: opacity .2s cubic-bezier(.7,0,.3,1),color .2s cubic-bezier(.7,0,.3,1);
+//
+//    &:hover {
+//      color: #fff;
+//    }
+//
+//    &.currencyList {
+//    display: block;
+//    width: 100%;
+//    padding: 0.5em 0.8em !important;
+//    clear: both;
+//    font-weight: 500;
+//    color: #484848 !important;
+//    text-align: inherit;
+//    white-space: nowrap;
+//    background-color: transparent;
+//    border: 0 !important;
+//    border-bottom: solid 1px rgba(0,0,0,.27) !important;
+//    }
+//  }
+//}

@@ -1,0 +1,32 @@
+<div class="sticky-add-to-cart-wrapper">
+    <div class="sticky-add-to-cart">
+        <div class="sticky-add-to-cart__product" >
+            <img src="{{productPicture}}" alt="{{productName}}" class="sticky-add-to-cart-img">
+            <div class="product-title-small hide-for-small">
+                <span>{{productName}}</span>
+            </div>
+            <div class="price-wrapper">
+                <p class="price product-page-price ">
+                <span class="price-amount amount">
+                    <bdi>
+                        {{productPrice}}
+                        <span class="price-currencySymbol">{{productCurrenty}}</span>
+                    </bdi>
+                </span>
+                </p>
+            </div>
+            <div class="qty-regulator quantity buttons_added {{productAddCartQuantity_class}}{{productId}}">
+                <a href="javascript:void(0);" class="minus qtyminus" id="sticky-qtyminus" data-id="{{productId}}">
+                    <i class="fa fa-minus" aria-hidden="true" style="font-weight: 400;"></i>
+                </a>
+                <input class="qty-val qty" name="quantity" id="sticky-quantity" type="text" value="1" data-id="{{productId}}">
+                <a href="javascript:void(0);" id="sticky-qtyplus" class="plus qtyplus" data-id="{{productId}}" style="opacity: 1;">
+                    <i class="fa fa-plus" aria-hidden="true" style="font-weight: 400;"></i>
+                </a>
+            </div>
+            <a class="btn btn-cmd add2cart add-2-cart btn-cart sticky-add-2-cart {{productAddToCart}}{{productId}}" href="javascript:void(0);" data-id="{{productId}}" onclick="$.Gomag.addToCart({'p': {{productId}}, 'l':'d'})" rel="nofollow">
+                Adauga in cos
+            </a>
+        </div>
+    </div>
+</div>
